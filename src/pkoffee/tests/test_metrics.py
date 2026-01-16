@@ -38,7 +38,7 @@ def test_compute_r2_properties():
     
     # Mean prediction
     y_mean = np.full_like(y_true, np.mean(y_true))
-    assert compute_r2(y_true, y_mean) == 0.0
+    assert np.isclose(compute_r2(y_true, y_mean), 0.0, atol=1e-10)
     
 def test_rmse():
     from pkoffee.metrics import compute_rmse
